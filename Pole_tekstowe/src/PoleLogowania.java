@@ -2,9 +2,9 @@ import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -43,7 +43,7 @@ public class PoleLogowania extends JPanel {
 		this.sluchacz = sluchacz;
 		this.sluchacz.setPanel(this);
 	}
-	public void utworzKomponenty(Ramka ramka) {
+	public void utworzKomponenty(JFrame frame) {
 		JLabel login = new JLabel("Login: ");
 		JLabel haslo = new JLabel("Haslo: ");
 		poleLogin = new JTextField();
@@ -57,13 +57,13 @@ public class PoleLogowania extends JPanel {
 		wejPanel.add(poleHaslo);
 		
 		JPanel buttonPanel = new JPanel();
-		buttonPanel.setLayout(new GridLayout(1, 2));
-		buttonLogin = new ButtonLogin();
-		buttonCancel = new ButtonCancel(ramka);
-		buttonLogin.addActionListener((ActionListener) sluchacz);
-		buttonCancel.addActionListener((ActionListener) sluchacz);
-		buttonPanel.add(buttonLogin);
+		buttonPanel.setLayout(new GridLayout(1, 3));
+		ButtonLogin buttonLogin = new ButtonLogin(frame);
+		JButton buttonCancel = new ButtonCancel();
+		JButton buttonNew = new ButtonNew();
+		buttonPanel.add(buttonLogin);;
 		buttonPanel.add(buttonCancel);
+		buttonPanel.add(buttonNew);
 		
 		JPanel helperPanel = new JPanel();
 		helperPanel.setLayout(new BorderLayout());
@@ -71,5 +71,6 @@ public class PoleLogowania extends JPanel {
 		helperPanel.add(buttonPanel, BorderLayout.AFTER_LAST_LINE);
 		
 		this.add(helperPanel);
+		buttonLogin.setPanel(this);
 	}
 }

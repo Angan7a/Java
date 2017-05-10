@@ -11,7 +11,7 @@ public class Test {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				ramka = new Ramka(this);
+				ramka = new Ramka();
 				
 			}
 		});

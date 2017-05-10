@@ -9,12 +9,13 @@ public class Ramka extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public Ramka(Ramka ramka) {
+	public Ramka() {
 		super("Komponenty tekstowe");
 		LoginListener sluchacz = new LoginListener(this);
 		JPanel panel = new PoleLogowania(sluchacz);
-		((PoleLogowania) panel).utworzKomponenty(ramka);
+		((PoleLogowania) panel).utworzKomponenty(this);
 		add(panel);
+		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(700, 700);
