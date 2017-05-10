@@ -11,8 +11,8 @@ public class Ramka extends JFrame {
 
 	public Ramka() {
 		super("Komponenty tekstowe");
-		LoginListener sluchacz = new LoginListener(this);
-		JPanel panel = new PoleLogowania(sluchacz);
+		//LoginListener sluchacz = new LoginListener(this);
+		JPanel panel = new PoleLogowania();
 		((PoleLogowania) panel).utworzKomponenty(this);
 		add(panel);
 		
