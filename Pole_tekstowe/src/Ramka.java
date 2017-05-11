@@ -11,11 +11,9 @@ public class Ramka extends JFrame {
 
 	public Ramka() {
 		super("Komponenty tekstowe");
-		//LoginListener sluchacz = new LoginListener(this);
-		JPanel panel = new PoleLogowania();
-		((PoleLogowania) panel).utworzKomponenty(this);
+		JPanel panel = new PanelLogowania(this);
+		//((PanelLogowania) panel).utworzKomponenty(this);
 		add(panel);
-		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(700, 700);
@@ -24,8 +22,4 @@ public class Ramka extends JFrame {
 		pack();
 		setVisible(true);
 	}
-	public void closeWindows() {
-		this.dispose();
-	}
-
 }
